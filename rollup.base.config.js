@@ -77,7 +77,7 @@ export const web = {
     }],
     plugins: webPlugins,
 };
-
+// 专为node设置的，如果需要则在src文件夹中将nodejs的单独放在一个文件中，并修改这里
 export const nodejs = {
     input: 'src/index.ts',
     output: [{

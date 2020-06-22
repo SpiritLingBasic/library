@@ -1,6 +1,4 @@
-export const str = "TypeScript";
+import * as request from "./request/index";
+import * as requestFun from "./request/fun";
 
-export enum Method {
-    GET = 1,
-    POST = 2,
-}
+export { request, requestFun };

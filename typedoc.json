@@ -1,5 +1,5 @@
 {
-    "name": "SpiritLing EasyMock Common Library Documentation",
+    "name": "SpiritLing Common Library Documentation",
     "readme": "README.md",
     "mode": "modules",
     "out": "docs",
@@ -8,8 +8,7 @@
     "preserveConstEnums": "true",
     "exclude": [
         "**/*+(spec).ts",
-        "src/sl-easymock-lib.ts",
-        "src/common.ts"
+        "src/index.ts"
     ],
     "external-modulemap": "src/([\\w\\-_]+)/",
     "stripInternal": "false"
