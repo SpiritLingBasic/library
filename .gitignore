@@ -2,5 +2,8 @@ yarn.lock
 node_modules
 dist
 .cache
+
+# 文档方面
 docs
 type-doc-theme/assets
+coverage
