@@ -27,6 +27,7 @@
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "@types/cheerio": "^0.22.18",
     "@types/jest": "^26.0.0",
     "@zerollup/ts-transform-paths": "^1.7.17",
     "jest": "^26.0.1",
@@ -44,5 +45,8 @@
     "typedoc": "^0.17.7",
     "typedoc-plugin-external-module-map": "^1.2.1",
     "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
   }
 }
