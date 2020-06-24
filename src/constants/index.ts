@@ -1,4 +1,4 @@
-import * as Html from "./html";
+import * as Html from "./html/index";
 
 export default {
     Html,
