@@ -29,6 +29,8 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@types/cheerio": "^0.22.18",
     "@types/jest": "^26.0.0",
+    "@types/lodash": "^4.14.157",
+    "@types/uuid": "^8.0.0",
     "@zerollup/ts-transform-paths": "^1.7.17",
     "jest": "^26.0.1",
     "jest-config": "^26.0.1",
@@ -47,6 +49,8 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "lodash": "^4.17.15",
+    "uuid": "^8.2.0"
   }
 }

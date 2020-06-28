@@ -8,7 +8,7 @@ export type htmlJSON = {
      */
     tag: HtmlTag.HtmlTagEnum;
     /**
-     * @description 内容，text：为纯文本，a标签为a中的内容
+     * @description 内容，text：为纯文本，a标签为a中的内容，只有为纯文本
      */
     content: string;
     /**
