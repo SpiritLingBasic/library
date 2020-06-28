@@ -1,4 +1,3 @@
-import _ from "lodash";
 /**
  * @description HtmlTag 空间
  * @export HtmlTag
@@ -8,7 +7,7 @@ export namespace HtmlTag {
      * @description 标签转枚举
      */
     export function Tag2Enum(str: string): HtmlTagEnum {
-        const temp = _.toLower(str);
+        const temp = str.toLocaleLowerCase().trim();
         return temp as HtmlTagEnum;
     }
     /**

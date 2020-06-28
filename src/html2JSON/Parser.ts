@@ -1,8 +1,6 @@
 import cheerio from "cheerio";
-import _ from "lodash";
 import { HtmlTag } from "@src/constants/html/htmlTag";
 import { htmlJSON } from "@src/html2JSON/type";
-import { v4 as uuidv4 } from "uuid";
 /**
  * @description
  * @param {string} htmlStr html string
@@ -36,7 +34,7 @@ export default function Parser(htmlStr: string): htmlJSON {
 function ParserMain(parentItem: Cheerio): htmlJSON {
     const allText = parentItem.clone().children().remove().end().text();
     const allChildren = parentItem.children();
-    if (_.trim(allText) === "") {
+    if (allText.trim() === "") {
         if (allChildren.length === 0) {
             // 两个都没有，自闭和标签
             return BothNotExist(parentItem);
@@ -62,7 +60,7 @@ function BothExist(parentItem: Cheerio): htmlJSON {
     const tagName = parentItem[0].tagName;
     const allChildren = parentItem.children();
     const allAttr = parentItem[0].attribs;
-    let allHtml = _.trim(parentItem.html() || "");
+    let allHtml = (parentItem.html() || "").trim();
     let uuidArr: string[] = [];
     let htmlJSONItem: htmlJSON = {
         tag: HtmlTag.Tag2Enum(tagName),
@@ -72,9 +70,11 @@ function BothExist(parentItem: Cheerio): htmlJSON {
     };
     // 将子级每个html 替换成 uuid，依照uuid的唯一性，可以保证后续使用split时不会出错
     for (let i = 0; i < allChildren.length; i++) {
-        const tempHtml = allChildren.eq(i).html();
+        const tempHtml = _$("<p>")("p")
+            .append(allChildren.eq(i).clone())
+            .html();
         if (tempHtml) {
-            const uuid = `{${uuidv4()}}`;
+            const uuid = `{${Math.random() * 10000000000}}`;
             uuidArr.push(uuid);
             allHtml = allHtml.replace(tempHtml, uuid);
         }
@@ -138,8 +138,9 @@ function ChildrenExist(parentItem: Cheerio): htmlJSON {
  */
 function TextExist(parentItem: Cheerio) {
     const allText = parentItem.text();
+    const tagName = parentItem[0].tagName;
     const htmlJSONItem: htmlJSON = {
-        tag: HtmlTag.HtmlTagEnum.TEXT,
+        tag: HtmlTag.Tag2Enum(tagName),
         children: [],
         content: allText,
         attr: {},
@@ -152,11 +153,19 @@ function str2Arr(str: string, split: string[]): string[] {
     let arr: string[] = [];
     for (let i = 0; i < split.length; i++) {
         const tempArr = temp.split(split[i]);
-        if (_.trim(tempArr[0]) !== "") {
+        if (tempArr[0].trim() !== "") {
             arr.push(tempArr[0]);
         }
         arr.push(split[i]);
         temp = tempArr[1];
     }
     return arr;
+}
+
+function _$(htmlStr: string): CheerioStatic {
+    const $ = cheerio.load(`${htmlStr}`, {
+        decodeEntities: true,
+        xmlMode: true,
+    });
+    return $;
 }
