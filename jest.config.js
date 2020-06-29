@@ -30,6 +30,7 @@ module.exports = {
         'src/**/*.ts',
         "!src/**/index.ts",
         "!src/constants/*.ts",
+        "!src/html2JSON/*",
     ],
     'reporters': [
         'default',

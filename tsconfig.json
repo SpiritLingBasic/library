@@ -86,6 +86,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    "src/html2JSON/*"
   ],
   "include": [
     "src/**/*",

@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import { HtmlTag } from "@src/constants/html/htmlTag";
+import { HtmlTag } from "@src/html2JSON/htmlTag";
 import { htmlJSON } from "@src/html2JSON/type";
 /**
  * @description

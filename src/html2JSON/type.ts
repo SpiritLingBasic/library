@@ -1,4 +1,4 @@
-import { HtmlTag } from "@src/constants/html/htmlTag";
+import { HtmlTag } from "@src/html2JSON/htmlTag";
 /**
  * @description html生成json形式的数据结构
  */
