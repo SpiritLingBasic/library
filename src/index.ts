@@ -1,4 +1,4 @@
-import * as request from "./request/index";
-import * as requestFun from "./request/fun";
+import * as constants from "@src/constants/index";
+import * as requestFun from "@src/request/fun";
 
-export { request, requestFun };
+export { constants, requestFun };

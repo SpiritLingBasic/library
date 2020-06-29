@@ -29,6 +29,8 @@ module.exports = {
     'collectCoverageFrom': [
         'src/**/*.ts',
         "!src/**/index.ts",
+        "!src/constants/*.ts",
+        "!src/html2JSON/*",
     ],
     'reporters': [
         'default',

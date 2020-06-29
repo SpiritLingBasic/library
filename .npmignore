@@ -1,1 +1,6 @@
 src
+docs
+test
+type-doc-theme
+.cache
+coverage
