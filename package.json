@@ -46,6 +46,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.6.5"
   }
 }
