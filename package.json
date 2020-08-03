@@ -1,12 +1,12 @@
 {
   "name": "@spiritling/library",
   "alias": "sllib",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/sllib.js",
   "browser": "dist/sllib.moblie.js",
   "web": "dist/sllib.web.js",
-  "typings": "dist/types/index.d.ts",
+  "typings": "dist/types/src/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && rollup -c",
