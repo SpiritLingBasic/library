@@ -6,7 +6,7 @@
   "main": "dist/sllib.js",
   "browser": "dist/sllib.moblie.js",
   "web": "dist/sllib.web.js",
-  "typings": "dist/types/src/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && rollup -c",

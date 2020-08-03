@@ -4,5 +4,3 @@ test
 type-doc-theme
 .cache
 coverage
-
-!dist/types/src
