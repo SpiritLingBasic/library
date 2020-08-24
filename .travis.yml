@@ -12,6 +12,8 @@ jobs:
           if: branch = master
           before_script:
               - export TZ='Asia/Shanghai'
+              - npm run build
+              - npm run docs
           script:
               - git remote -v
               - git config user.name "Travis CI"
