@@ -7,6 +7,9 @@
   "browser": "dist/sllib.moblie.js",
   "web": "dist/sllib.web.js",
   "typings": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "npm run clean && rollup -c",
