@@ -31,13 +31,15 @@ jobs:
           if: branch = dev
           before_script:
               - export TZ='Asia/Shanghai' # 改变时区
+              - npm run build
+              - npm run docs
           script:
               - git remote -v
               - git config user.name "Travis CI"
               - git config user.email "travis.ci@spiritling.pub"
               - git checkout --orphan release
               - git branch -v -a
-              - git rm --cached -r -f .
+              - git rm --cached -r -f ./dist
               - rm -rf ./src
               - rm -rf ./test
               - git add -f .
