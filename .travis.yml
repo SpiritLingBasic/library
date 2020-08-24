@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+    - 12
+cache:
+    apt: true
+    directories:
+        - node_modules
+jobs:
+    include:
+        - stage: master
+          name: "master"
+          if: branch = master
+          before_script:
+              - export TZ='Asia/Shanghai'
+          script:
+              - git remote -v
+        - stage: dev
+          name: "dev"
+          if: branch = dev
+          before_script:
+              - export TZ='Asia/Shanghai' # 改变时区
+          script:
+              - echo "hub docker"
+
+notifications:
+    email:
+        recipients:
+            - travis.ci@spiritling.pub
+        on_success: never # default: change
+        on_failure: always # default: always
