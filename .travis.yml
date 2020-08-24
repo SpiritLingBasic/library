@@ -40,8 +40,7 @@ jobs:
               - git checkout --orphan release
               - git branch -v -a
               - git rm --cached -r -f .
-              - rm -rf ./src
-              - rm -rf ./test
+              - rm -rf ./src ./test ./node_modules ./cache
               - git add -f .
               - git commit -m "Travis CI Auto Release"
               - git push -f https://${GITHUB_USERNAME}:${GITHUB_WRITE_TOKEN}@github.com/SpiritLingBasic/library.git
