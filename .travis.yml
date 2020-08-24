@@ -39,7 +39,7 @@ jobs:
               - git config user.email "travis.ci@spiritling.pub"
               - git checkout --orphan release
               - git branch -v -a
-              - git rm --cached -r -f ./dist
+              - git rm --cached -r -f .
               - rm -rf ./src
               - rm -rf ./test
               - git add -f .
