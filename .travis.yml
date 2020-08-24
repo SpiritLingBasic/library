@@ -20,7 +20,7 @@ jobs:
               - git config user.email "travis.ci@spiritling.pub"
               - git checkout --orphan release
               - git branch -v -a
-              - git rm --cached -r -f dist
+              - git rm --cached -r -f ./dist
               - rm -rf ./src
               - rm -rf ./test
               - git add -f .
@@ -32,7 +32,17 @@ jobs:
           before_script:
               - export TZ='Asia/Shanghai' # 改变时区
           script:
-              - echo "hub docker"
+              - git remote -v
+              - git config user.name "Travis CI"
+              - git config user.email "travis.ci@spiritling.pub"
+              - git checkout --orphan release
+              - git branch -v -a
+              - git rm --cached -r -f ./dist
+              - rm -rf ./src
+              - rm -rf ./test
+              - git add -f .
+              - git commit -m "Travis CI Auto Release"
+              - git push -f https://${GITHUB_USERNAME}:${GITHUB_WRITE_TOKEN}@github.com/SpiritLingBasic/library.git
 
 notifications:
     email:
