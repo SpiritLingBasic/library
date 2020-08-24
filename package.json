@@ -32,6 +32,8 @@
     "@types/cheerio": "^0.22.18",
     "@types/jest": "^26.0.0",
     "@zerollup/ts-transform-paths": "^1.7.17",
+    "cheerio": "^1.0.0-rc.3",
+    "core-js": "^3.6.5",
     "jest": "^26.0.1",
     "jest-config": "^26.0.1",
     "jest-extended": "^0.11.5",
@@ -47,9 +49,5 @@
     "typedoc": "^0.17.7",
     "typedoc-plugin-external-module-map": "^1.2.1",
     "typescript": "^3.9.5"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "core-js": "^3.6.5"
   }
 }
