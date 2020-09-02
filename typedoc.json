@@ -1,0 +1,15 @@
+{
+    "name": "SpiritLing Common Library Documentation",
+    "readme": "README.md",
+    "mode": "modules",
+    "out": "docs",
+    "theme": "type-doc-theme",
+    "ignoreCompilerErrors": "true",
+    "preserveConstEnums": "true",
+    "exclude": [
+        "**/*+(spec).ts",
+        "src/index.ts"
+    ],
+    "external-modulemap": "src/([\\w\\-_]+)/",
+    "stripInternal": "false"
+}

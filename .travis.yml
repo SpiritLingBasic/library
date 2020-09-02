@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+    - 12
+cache:
+    apt: true
+    directories:
+        - node_modules
+jobs:
+    include:
+        - stage: master
+          name: "master"
+          if: branch = master
+          before_script:
+              - export TZ='Asia/Shanghai'
+              - npm run build
+              - npm run docs
+              - npm run test
+          script:
+              - git remote -v
+              - git config user.name "Travis CI"
+              - git config user.email "travis.ci@spiritling.pub"
+              - git checkout --orphan release
+              - git branch -v -a
+              - git rm --cached -r -f .
+              - rm -rf ./src ./test ./node_modules ./.cache ./coverage
+              - git add -f .
+              - git commit -m "Travis CI Auto Release `date +"%Y-%m-%d %H:%M:%S"`"
+              - git push -f https://${GITHUB_USERNAME}:${GITHUB_WRITE_TOKEN}@github.com/SpiritLingBasic/library.git
+              # git gh-pages
+              - git checkout --orphan gh-pages
+              - git branch -v -a
+              - rm -rf `ls | grep -v docs`
+              - cp -r ./docs/* .
+              - rm -rf ./public
+              - git add -f .
+              - git commit -m "Travis CI Auto Release `date +"%Y-%m-%d %H:%M:%S"`"
+              - git push -f https://${GITHUB_USERNAME}:${GITHUB_WRITE_TOKEN}@github.com/SpiritLingBasic/library.git
+notifications:
+    email:
+        recipients:
+            - travis.ci@spiritling.pub
+        on_success: never # default: change
+        on_failure: always # default: always
