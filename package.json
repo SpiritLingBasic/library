@@ -14,10 +14,10 @@
     "clean": "rm -rf ./dist",
     "build": "npm run clean && rollup -c",
     "docs": "typedoc --tsconfig \"tsconfig.json\"",
-    "open": "open-cli docs/index.html",
+    "open": "open-cli ./docs/index.html",
     "docs:open": "npm run docs && npm run open",
     "test": "jest --coverage --runInBand",
-    "test:open": "npm run test && open-cli coverage/lcov-report/jest-report.html && open-cli coverage/lcov-report/index.html"
+    "test:open": "npm run test && open-cli ./coverage/lcov-report/jest-report.html && open-cli ./coverage/lcov-report/index.html"
   },
   "author": "SpiritLing",
   "license": "ISC",

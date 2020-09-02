@@ -1,4 +1,2 @@
-import * as request from "./request/index";
-import * as response from "./response/index";
-
-export { request, response };
+export * from "./request/index";
+export * from "./response/index";
